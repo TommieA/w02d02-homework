@@ -1,0 +1,155 @@
+#name {
+    position: fixed;
+    bottom: 2in;
+}
+
+#compScore {
+    position: fixed;
+    bottom: 5.25in;
+    font-size: .5in;
+    font-weight: bold;
+}
+
+#computer {
+    position: fixed;
+    bottom: 5.25in;
+    font-size: .5in;
+    left: .75in;
+}
+
+#tieScore {
+    position: fixed;
+    bottom: 3.75in;
+    font-size: .5in;
+    font-weight: bold;
+}
+
+#tie {
+    position: fixed;
+    bottom: 3.75in;
+    font-size: .5in;
+    left: .75in;
+}
+
+#myScore {
+    position: fixed;
+    bottom: 2.25in;
+    font-size: .5in;
+    font-weight: bold;
+}
+
+#me {
+    position: fixed;
+    bottom: 2.25in;
+    font-size: .5in;
+    left: .75in;
+}
+
+#deal {
+    position: fixed;
+    width: 2in;
+    bottom: 1.5in;    
+}
+
+#message {
+    position: fixed;
+    bottom: .25in;
+    justify-content: center;
+    font-size: .33in;
+}
+
+#compCard3 {
+    position: fixed;
+    height: 2.25in;
+    width: 1.25in;
+    bottom: 4.5in;
+    left: 6in;
+    border-style: solid;
+    border-color: black;
+    background-color: aqua;
+    text-align: center;   
+}
+
+#compCard2 {
+    position: fixed;
+    height: 2.25in;
+    width: 1.25in;
+    bottom: 4.5in;
+    left: 4.68in;
+    border-style: solid;
+    border-color: black;
+    background-color: aqua;
+    text-align: center;
+}
+
+#compCard1 {
+    position: fixed;
+    height: 2.25in;
+    width: 1.25in;
+    bottom: 4.5in;
+    left: 3.37in;
+    border-style: solid;
+    border-color: black;
+    background-color: aqua;
+    text-align: center;
+}
+
+#myCard3 {
+    position: fixed;
+    height: 2.25in;
+    width: 1.25in;
+    bottom: 1.5in;
+    left: 6in;
+    border-style: solid;
+    border-color: black;
+    background-color: pink;
+    text-align: center;
+}
+
+#myCard3Btn {
+    position: fixed;
+    height: .17in;
+    width: 1.25in;
+    left: 6in;
+    bottom: 1.28in;
+}
+
+#myCard2 {
+    position: fixed;
+    height: 2.25in;
+    width: 1.25in;
+    bottom: 1.5in;
+    left: 4.68in;
+    border-style: solid;
+    border-color: black;
+    background-color: pink;
+    text-align: center;
+}
+
+#myCard2Btn {
+    position: fixed;
+    height: .17in;
+    width: 1.25in;
+    left: 4.68in;
+    bottom: 1.28in;
+}
+
+#myCard1 {
+    position: fixed;
+    height: 2.25in;
+    width: 1.25in;
+    bottom: 1.5in;
+    left: 3.37in;
+    border-style: solid;
+    border-color: black;
+    background-color: pink;
+    text-align: center;
+}
+
+#myCard1Btn {
+    position: fixed;
+    height: .17in;
+    width: 1.25in;
+    left: 3.37in;
+    bottom: 1.28in;
+}

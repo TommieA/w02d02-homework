@@ -1,12 +1,41 @@
 <!DOCTYPE html> 
 <html>
     <head>
-        <title></title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>Pokemon Game</title>
     </head>
     <body>
+
+        <form>
+            <input type="text" placeholder="Name" id="name">
+        </form>
+
+        <p id=myScore>0</p><p id="me">Me</p>
+        <p id=compScore>0</p><p id="computer">Computer</p>
+        <p id=tieScore>0</p><p id="tie">Tie</p>
+
+        <div id="compCards">
+            <div id="compCard1">A</div>
+            <div id="compCard2">B</div>
+            <div id="compCard3">C</div>
+        </div>
+
+        <div id="myCards">
+            <div id="myCard1">1</div>
+            <div id="myCard2">2</div>
+            <div id="myCard3">3</div>
+        </div>
+
+        <button id="deal">Deal</button>
+
+        <p id="message"></p>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
         <script src="js/app.js"></script>
+
     </body>
 </html>
 

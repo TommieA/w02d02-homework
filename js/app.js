@@ -13,7 +13,7 @@ const cards = [
       damage: 50
     }, {
       name: "Jigglypuff",
-      damage: 60
+      damage: 60   
     }, {
       name: "Mankey",
       damage: 30
@@ -56,43 +56,111 @@ const cards = [
     }
   ]
 
-let myCardsInPlay = [];
+let myCardsInPlay   = [];
 let compCardsInPlay = [];
-let cardsSelected = [];
-let myScore = 0;
-let compScore = 0;
-let tieScore = 0;
-  
-      if (cards.length > 0) {
-            getCards();
-            for (let i = 0; i < 3; i++) {
-                myCardsInPlay[i] = cardsSelected[i];
-            };
-            getCards();
-            for (let i = 0; i < 3; i++) {
-                compCardsInPlay[i] = cardsSelected[i];
-            };
-        } else {alert('No more cards left')};
-  
-  compareCards();
-  console.log(`Me - ${myScore}, Computer - ${compScore},  Tie - ${tieScore}, cards left - ${cards.length}`)
-
-  function getCards() {
-      for(let i = 0; i < 3; i++) {
-            let k = Math.floor(Math.random() * 18) + 1;
-            cardsSelected[i] =  cards[k];
-            cards.splice([k], 1);
-      };
-  };  
-
-  function compareCards() {
-      for(let i = 0; i < 3; i++) {
-         if(myCardsInPlay[i].damage > compCardsInPlay[i].damage) {
-             myScore++;
-         } else if (myCardsInPlay[i].damage < compCardsInPlay[i].damage) {
-             compScore++;
-         } else {
-             tieScore++;
-         }    
-      };
+let cardsSelected   = [];
+let myScore         = 0;
+let compScore       = 0;
+let tieScore        = 0;
+let round           = 0;
+//let myCard          = {};
+class myCard {
+  constructor (name, damage) {
+    this.name = name;
+    this.damage = damage;
   };
+};        
+
+// while(cards.length > 0){
+//   playPokemon();
+// };
+
+$('#message').text("Press Deal to start")
+
+$('#deal').on('click', ()=>{
+  $('#compCard1').text('');
+  $('#compCard2').text('');
+  $('#compCard3').text('');
+  $('#message').text('');
+  if(cards.length === 0){
+    $('#message').text('Game Over.  Refresh to play again')
+  }else{
+    playPokemon()
+  };
+});
+  
+function playPokemon() {
+    get3RandomCards();
+    for (let i = 0; i < 3; i++) {
+         x = i + 1;
+         $('#myCard' + x).text(`${cardsSelected[i].name} ${cardsSelected[i].damage}`);
+         myCardsInPlay[i] = cardsSelected[i];
+    };
+
+    get3RandomCards();
+    for (let i = 0; i < 3; i++) {
+        x = i + 1;
+        compCardsInPlay[i] = cardsSelected[i];
+    }; 
+}; 
+
+function get3RandomCards() {
+    for(let i = 0; i < 3; i++) {
+          if (cards.length === 1){let K = 0}else{
+          k = Math.floor(Math.random() * cards.length)};
+          cardsSelected[i] =  cards[k];
+          cards.splice([k], 1);
+    };
+};  
+
+function compareCards(){
+    round++;
+    let m = 0;
+    do {
+       m = Math.floor(Math.random() * 3);
+    }
+    while (compCardsInPlay[m] === '');
+    let p = m + 1;
+    //console.log(p, compCardsInPlay[m]);
+    $('#compCard' + p).text(`${cardsSelected[m].name} ${cardsSelected[m].damage}`);   
+    if(myCard.damage > compCardsInPlay[m].damage) {
+        myScore++;
+        $('#myScore').text(`${myScore}`);
+        $('#message').text('You won');
+        compCardsInPlay[m] = '';
+    } else if (myCard.damage < compCardsInPlay[m].damage) {
+        compScore++;
+        $('#compScore').text(`${compScore}`);
+        $('#message').text('The computer won');
+        compCardsInPlay[m] = '';
+    } else {
+        tieScore++;
+        $('#tieScore').text(`${tieScore}`);
+        $('#message').text('Tie');
+        compCardsInPlay[m] = '';
+    };  
+};
+
+$('#myCard1').on('click', ()=>{
+  //console.log(myCardsInPlay[0]);
+  myCard.name = myCardsInPlay[0].name;
+  myCard.damage = myCardsInPlay[0].damage;
+  compareCards();
+  $('#myCard1').text('');
+});
+
+$('#myCard2').on('click', ()=>{
+  //console.log(myCardsInPlay[1])
+  myCard.name = myCardsInPlay[1].name;
+  myCard.damage = myCardsInPlay[1].damage;
+  compareCards();
+  $('#myCard2').text('');
+});
+
+$('#myCard3').on('click', ()=>{
+  //console.log(myCardsInPlay[2])
+  myCard.name = myCardsInPlay[2].name;
+  myCard.damage = myCardsInPlay[2].damage;
+  compareCards();
+  $('#myCard3').text('');
+});
